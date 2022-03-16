@@ -1,0 +1,5 @@
+"0","#Nox data per municipality, month and year"
+"0","res.RMISC.Q <- summarySE(DATOS_AGREGADOS_2017_2020.1, measurevar=""NO.MAX"", groupvars=c(""municipality"", ""year"",""month""),na.rm = T)"
+"2","NaNs produced"
+"0","AGGREGATENOX.MUN.YEAR.MONTH<-res.RMISC.Q #descriptive"
+"0","plotmeans(NO.MAX~ municipality , data=DATOS_AGREGADOS_2017_2020.1, frame = T,xlab = ""CITY"", ylab=""maximum NOx"") #PLOT DE LAB"

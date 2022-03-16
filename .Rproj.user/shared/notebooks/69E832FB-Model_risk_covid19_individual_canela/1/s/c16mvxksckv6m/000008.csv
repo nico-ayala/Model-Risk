@@ -1,0 +1,4 @@
+"0",""
+"0","res.RMISC.Q <- summarySE(model_risk, measurevar=""density"", groupvars=c(""municipality""),na.rm = T)"
+"2","NaNs produced"
+"0","res.RMISC.Q "

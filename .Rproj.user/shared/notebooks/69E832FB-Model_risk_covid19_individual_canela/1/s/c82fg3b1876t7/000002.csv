@@ -1,0 +1,6 @@
+"0",""
+"0","#percent nox reduction"
+"0","#Descriptive analysis of NOx per month, year and municipality"
+"0","res.1 <- summarySE(total.agregat3, measurevar=""per.var2020_otros"", groupvars=c(""municipality"",""month""),na.rm = T)"
+"2","NaNs produced"
+"0","res.1"

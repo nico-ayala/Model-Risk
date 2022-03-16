@@ -1,0 +1,6 @@
+"0",""
+"0","#reduccion porcentual de nox"
+"0","#DESCRIPTIVA DE NO2 POR MES AÑO Y MUNICIPIO"
+"0","res.1 <- summarySE(total.agregat3, measurevar=""per.var2020_otros"", groupvars=c(""MUNICIPI"",""MES""),na.rm = T)"
+"2","Error in FUN(X[[i]], ...) : objeto 'MUNICIPI' no encontrado
+"

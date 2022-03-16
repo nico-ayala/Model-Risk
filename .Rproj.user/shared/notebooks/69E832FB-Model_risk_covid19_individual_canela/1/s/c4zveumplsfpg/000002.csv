@@ -1,0 +1,4 @@
+"0","##Descriptive analysis for family incomes in thousands of euros per inhabitants (income_euros_inhab). "
+"0","res.RMISC.Q <- summarySE(model_risk, measurevar=""income_euros_inhab"", groupvars=c(""municipality""),na.rm = T)"
+"2","NaNs produced"
+"0","res.RMISC.Q #descriptive analysis"

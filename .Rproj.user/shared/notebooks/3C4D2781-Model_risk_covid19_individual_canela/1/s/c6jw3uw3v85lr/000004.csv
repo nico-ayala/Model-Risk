@@ -1,0 +1,7 @@
+"0"," "
+"0","#library(BDSbiost3)"
+"0"," #Predict evolution of cases in Spain with an ""ad-hoc"" model ()"
+"0","pred.Casos.diarios<-covid.cases.cumcases3(X=seq(1:168), Y=cat$num_casos, max.cases.free=T, max.cases = max(cat$num_casos), lim.days=365,iterations = 20, label.ind=""CATALONIA: PREDICTION COVID-19 (DAY1: 31/01/2020)"", duration_pandemic=200)"
+"2","Error in covid.cases.cumcases3(X = seq(1:168), Y = cat$num_casos, max.cases.free = T,  : 
+  no se pudo encontrar la función ""covid.cases.cumcases3""
+"

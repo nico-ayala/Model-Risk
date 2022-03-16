@@ -1,0 +1,12 @@
+"0","#CALCULOS DE LOS AGREGADOS DE NOX POR MUNICIPIO, ANY Y MES"
+"0","#AGGREGATENOX.MUN.ANY.MES"
+"0",""
+"0","MAM_2020 <- AGGREGATENOX.MUN.ANY.MES[ which(AGGREGATENOX.MUN.ANY.MES$ANY==""2020""), c(1,2,3,5)]"
+"0","MAM_2019 <- AGGREGATENOX.MUN.ANY.MES[ which(AGGREGATENOX.MUN.ANY.MES$ANY==""2019""), c(1,2,3,5) ]"
+"0","MAM_2018 <- AGGREGATENOX.MUN.ANY.MES[ which(AGGREGATENOX.MUN.ANY.MES$ANY==""2018""), c(1,2,3,5) ]"
+"0","MAM_2017 <- AGGREGATENOX.MUN.ANY.MES[ which(AGGREGATENOX.MUN.ANY.MES$ANY==""2017""), c(1,2,3,5) ]"
+"0",""
+"0","#valores agregados de 2020-2017"
+"0","total.agregat1<- merge(MAM_2020,MAM_2019, by=c(""MUNICIPI"",""MES""))"
+"2","Error in fix.by(by.x, x) : 'by' must specify uniquely valid columns
+"

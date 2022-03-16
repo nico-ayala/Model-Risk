@@ -1,0 +1,10 @@
+"0",""
+"0","#Data on incidence rates and density"
+"0","library(readxl)                         "
+"0","model_risk<- read_excel(""dadesCanela_modelrisk (1).xlsx"", sheet = ""JUNTO_TODO"", skip = 1)"
+"2","New names:
+* `` -> ...18
+"
+"0","colnames(model_risk)= c(""health_area"",""positive_cases"",""suspected_cases"",""raw_rate_10k"",""standar_rate_10k"",""insured_people "",""municipality"",""population"",""surface_km2"", ""density"", ""rank_number_inhabitant"",""municipality_1"",""NOX_reduction_january2020"",""NOX_reduction_february2020"",""NOX_reduction_march2020"",""NOX_reduction_april2020"",""NOX_reduction_may2020"",""health_area_1"",""income_euros"",""income_euros_inhab"" , ""income_index_100"")"
+"0",""
+"0","head(model_risk)"

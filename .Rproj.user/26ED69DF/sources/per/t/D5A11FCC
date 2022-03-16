@@ -1,0 +1,32 @@
+{
+    "id": "D5A11FCC",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1642878581812.0,
+    "source_on_save": false,
+    "relative_order": 5,
+    "properties": {
+        "expression": "res.RMISC.Q",
+        "caption": "res.RMISC.Q",
+        "totalObservations": 40,
+        "displayedObservations": 40,
+        "variables": 6,
+        "cacheKey": "90BA2BFE",
+        "object": "res.RMISC.Q",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=res.RMISC.Q&cache_key=90BA2BFE&max_cols=50",
+        "preview": 0
+    },
+    "folds": "",
+    "lastKnownWriteTime": 8241999773130117964,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1642878581812,
+    "read_only": false,
+    "read_only_alternatives": []
+}

@@ -1,0 +1,32 @@
+{
+    "id": "39E26F7C",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1642879949104.0,
+    "source_on_save": false,
+    "relative_order": 4,
+    "properties": {
+        "expression": "DATOS_AGREGADOS_2017_2020.1",
+        "caption": "DATOS_AGREGADOS_2017_2020.1",
+        "totalObservations": 2227,
+        "displayedObservations": 2227,
+        "variables": 7,
+        "cacheKey": "261B42BA",
+        "object": "DATOS_AGREGADOS_2017_2020.1",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=DATOS_AGREGADOS_2017_2020.1&cache_key=261B42BA&max_cols=50",
+        "preview": 0
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1642879677,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1642879949104,
+    "read_only": false,
+    "read_only_alternatives": []
+}
