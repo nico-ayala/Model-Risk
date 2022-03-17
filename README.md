@@ -41,6 +41,17 @@ The aggregated data consists of 233 health areas in the rows (sanitary area) com
 ●	income_euros_inhab: Family income per inhabitant (thousands of euros).<br>
 ●	income_index_100: Family income per inhabitant (index between 0-100%) referred to the whole of Catalonia.<br>
 
-### Contact:
-nayalaaldana@gmail.com <br>
-nayalaal28@alumnes.ub.edu <br>
+### Contact us:
+Nicolas Ayala Aldana <br>
+Department of Microbiology, Genetics and Statistics - University of Barcelona <br>
+nayalaaldana@gmail.com ; nayalaal28@alumnes.ub.edu <br>
+
+Dr. Antonio Monleon Getino <br>
+Department of Microbiology, Genetics and Statistics - University of Barcelona <br>
+amonleong@ub.edu <br>
+
+Dr. Jaume Canela Soler <br>
+Department of Preventive Medicine and Public Health - Hospital Clinic, University of Barcelona <br>
+jcanela@ub.edu <br>
+
+
