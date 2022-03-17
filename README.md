@@ -17,6 +17,10 @@ Generalitat of Catalonia (Catalonia Government):http://aquas.gencat.cat/ca/actua
 
 Municipal data from environmental pollution stations: https://analisi.transparenciacatalunya.cat/Medi-Ambient/Dades-d-immissi-dels-punts-de-mesurament-de-la-Xar/uy6k-2s8r/data
 
+## Methods.
+Linear regression model: Where the distribution of a single response variable (Y= standardized crude rate per 10,000 inhabitants) is related to several explanatory variables, X1, X2, . , by a regression model Monleon, 2017.<br>
+Relative Risk: the RR (relative risk) or risk ratio as a tool calculated by the linear regression models [RR=1+(slope/intercept)] using ecological studies.The calculation of the relative ecological risk approximation as a method to approximate RR related to COVID-19 from the aggregated data is presented below, using the method proposed by Morgenstern.<br>
+
 ## Variables of Ecological Study.
 The aggregated data consists of 233 health areas in the rows (sanitary area) compiled in a spreadsheet by these different databases where the following variables are the columns:<br> 
 ●	health_area: part of the municipality where the incidence of COVID19 has been noted. It is related to a sanitary area where a certain number of inhabitants is controlled.<br>
@@ -37,3 +41,6 @@ The aggregated data consists of 233 health areas in the rows (sanitary area) com
 ●	income_euros_inhab: Family income per inhabitant (thousands of euros).<br>
 ●	income_index_100: Family income per inhabitant (index between 0-100%) referred to the whole of Catalonia.<br>
 
+### Contact:
+nayalaaldana@gmail.com <br>
+nayalaal28@alumnes.ub.edu <br>
