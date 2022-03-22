@@ -20,6 +20,7 @@ Municipal data from environmental pollution stations: https://analisi.transparen
 ## Methods.
 Linear regression model: Where the distribution of a single response variable (Y= standardized crude rate per 10,000 inhabitants) is related to several explanatory variables, X1, X2, . , by a regression model Monleon, 2017.<br>
 Relative Risk: the RR (relative risk) or risk ratio as a tool calculated by the linear regression models [RR=1+(slope/intercept)] using ecological studies.The calculation of the relative ecological risk approximation as a method to approximate RR related to COVID-19 from the aggregated data is presented below, using the method proposed by Morgenstern.<br>
+Statistics analysis: R Studio .<br>
 
 ## Variables of Ecological Study.
 The aggregated data consists of 233 health areas in the rows (sanitary area) compiled in a spreadsheet by these different databases where the following variables are the columns:<br> 
