@@ -1,7 +1,7 @@
 ---
 title: "Ecological Risk Model"
-author: "Toni Monleon & Nicolas Ayala. BIOST3. UNIV BARCELONA"
-date: "20/5/2020"
+author: "Nicolas Ayala & Toni Monleon. BIOST3. UNIV BARCELONA"
+date: "04/04/2022"
 output: html_document
 ---
 ```{r setup, include=FALSE}
@@ -67,7 +67,7 @@ Data management based on incidence data, IDESCAT data and air pollution data:
 library(readxl)                         
 model_risk<- read_excel("dadesCanela_modelrisk (1).xlsx", sheet = "JUNTO_TODO", skip = 1)
 
-colnames(model_risk)= c("health_area","positive_cases","suspected_cases","raw_rate_10k","standar_rate_10k","insured_people ","municipality","population","surface_km2", "density", "rank_number_inhabitant","municipality_1","NOX_reduction_january2020","NOX_reduction_february2020","NOX_reduction_march2020","NOX_reduction_april2020","NOX_reduction_may2020","health_area_1","RFDB (milers d'euros)","RFDB per habitant (milers d'euros)","RFDB per habitant (índex Catalunya=100)")
+colnames(model_risk)= c("health_area","positive_cases","suspected_cases","raw_rate_10k","standard_rate_10k","insured_people ","municipality","population","surface_km2", "density", "rank_number_inhabitant","municipality_1","NOX_reduction_january2020","NOX_reduction_february2020","NOX_reduction_march2020","NOX_reduction_april2020","NOX_reduction_may2020","health_area_1","RFDB (milers d'euros)","RFDB per habitant (milers d'euros)","RFDB per habitant (índex Catalunya=100)")
 
 head(model_risk)
 ```
@@ -235,9 +235,9 @@ plot(model_risk$raw_rate_10k ~ model_risk$density, data=model_risk, xlab="Densit
 
 
 ```
-Standar rate vs Density.
+Standard rate vs Density.
 ```{r}
-plot (model_risk$standar_rate_10k ~ model_risk$density, data=model_risk, xlab="Density inhab. /km2", ylab="Standar rate ")
+plot (model_risk$standard_rate_10k ~ model_risk$density, data=model_risk, xlab="Density inhab. /km2", ylab="Standard rate ")
 ```
 
 Positive Cases of COVID-19 and Density
@@ -246,25 +246,25 @@ plot(model_risk$positive_cases ~ model_risk$density, data=model_risk, xlab="Dens
 ```
 
 
-Standar rate and NOx reduction (%) in March 2020 compared to 2017-2019
+Standard rate and NOx reduction (%) in March 2020 compared to 2017-2019
 ```{r}
-plot(model_risk$standar_rate_10k ~ model_risk$NOX_reduction_march2020, data=model_risk, col="red", xlab="NOx reduction (%)", ylab="Standar rate COVID-19", xlim=c(0, 60))
+plot(model_risk$standard_rate_10k ~ model_risk$NOX_reduction_march2020, data=model_risk, col="red", xlab="NOx reduction (%)", ylab="Standard rate COVID-19", xlim=c(0, 60))
 ```
 
 
-Standar rate and NOx reduction (%) in April 2020 compared to 2017-2019
+Standard rate and NOx reduction (%) in April 2020 compared to 2017-2019
 ```{r}
-plot(model_risk$standar_rate_10k ~ model_risk$NOX_reduction_april2020, data=model_risk, col="red", xlab="Nox reduction", ylab="standar_rate_10k COVID19", xlim=c(0, 80))
+plot(model_risk$standard_rate_10k ~ model_risk$NOX_reduction_april2020, data=model_risk, col="red", xlab="Nox reduction", ylab="standard_rate_10k COVID19", xlim=c(0, 80))
 ```
 
-Standar rate and NOx reduction (%) in May 2020 compared to 2017-2019
+Standard rate and NOx reduction (%) in May 2020 compared to 2017-2019
 ```{r}
-plot(model_risk$standar_rate_10k ~ model_risk$NOX_reduction_may2020, data=model_risk, col="red", xlab="Nox reduction", ylab="standar_rate_10k COVID19", xlim=c(0, 110))
+plot(model_risk$standard_rate_10k ~ model_risk$NOX_reduction_may2020, data=model_risk, col="red", xlab="Nox reduction", ylab="standard_rate_10k COVID19", xlim=c(0, 110))
 ```
 
-Standar rate of COVID19 and  NOx reduction (%) in May 2020 compared to May 2017-2019
+Standard rate of COVID19 and  NOx reduction (%) in May 2020 compared to May 2017-2019
 ```{r}
-plot(model_risk$standar_rate_10k ~ model_risk$NOX_reduction_may2020, data=model_risk, col="red", xlab="NOx reduction in may 2020", ylab="standar_rate_10k COVID19", xlim=c(0, 120))
+plot(model_risk$standard_rate_10k ~ model_risk$NOX_reduction_may2020, data=model_risk, col="red", xlab="NOx reduction in may 2020", ylab="standard_rate_10k COVID19", xlim=c(0, 120))
 ```
 
 
@@ -279,7 +279,7 @@ Where it is indicated how to calculate the relative ecological risk of an event 
 The incidence-type model ~f(mobilitat, densitat) seeks to determine the relative ecological risk (Morgensen, 1982) that a person has the disease and the population risk.
 The level of aggregation in this case is: municipality/portion present in the system of the "Generalitat de Catalunya".
 The dependent variables (Y) to predict are:
--standar_rate_10k: Standar rate (10.000 inhab) of COVID-19
+-standard_rate_10k: Standard rate (10.000 inhab) of COVID-19
 -raw_rate_10_k: Raw rate of COVID-19
 -positive_cases: Positive cases of COVID-19
 
@@ -301,10 +301,10 @@ res1<-lm(raw_rate_10k ~ density + surface_km2 + population , data=model_risk)
 summary(res1)
 ```
 
-Standar rate and population + density + surface
+Standard rate and population + density + surface
 ```{r}
 # taxa_ESTANDARITZADA
-res2<-lm(standar_rate_10k ~ surface_km2 + population , data=model_risk)
+res2<-lm(standard_rate_10k ~ surface_km2 + population , data=model_risk)
 summary(res2)
 
 ```
@@ -316,19 +316,19 @@ res3<-lm(positive_cases~ density + surface_km2 + population, data=model_risk)
 summary(res3)
 ```
 
-Standar rate of COVID-19 and density
+Standard rate of COVID-19 and density
 ```{r}
 # taxa_ESTANDARITZADA
-res2<-lm(standar_rate_10k ~ density , data=model_risk)
+res2<-lm(standard_rate_10k ~ density , data=model_risk)
 summary(res2)
 
 ```
 
 **Relative Ecologic Risk Morguenson 1982 ** 
-Standar rate of COVID-19 compared to Density
+Standard rate of COVID-19 compared to Density
 ```{r}
-# Standar rate of COVID-19
-res2<-lm(standar_rate_10k~ density , data=model_risk)
+# Standard rate of COVID-19
+res2<-lm(standard_rate_10k~ density , data=model_risk)
 #summary(res2)
 print("Relative Ecologic Risk ()")
 (res2$coefficients[1] + res2$coefficients[2])/res2$coefficients[1] 
@@ -372,7 +372,7 @@ RRE<-function(X,Y,num.itera=100,nsize=10){
   return(res.REE.CI)
 }
 
-final.RRE<-RRE(X=model_risk$density ,Y=model_risk$standar_rate_10k,num.itera=1000,nsize=200)
+final.RRE<-RRE(X=model_risk$density ,Y=model_risk$standard_rate_10k,num.itera=1000,nsize=200)
 
 final.RRE
 
@@ -381,7 +381,7 @@ final.RRE
 Pollution as an indirect measure of mobility
 Multiple regression models with regressors (pollution reduction):
 
-Standar rate of COVID19 and pollution reduction
+Standard rate of COVID19 and pollution reduction
 ```{r}
 #change data format
 model_risk$NOX_reduction_january2020<- as.numeric(model_risk$NOX_reduction_january2020)
@@ -392,10 +392,10 @@ model_risk$NOX_reduction_may2020<- as.numeric(model_risk$NOX_reduction_may2020)
 ```
 
 Regression models for pollution reduction
-standar_rate_10k vs pullution reduction (March 2020) 
+standard_rate_10k vs pullution reduction (March 2020) 
 **Relative Ecologic Risk Morguenson 1982 ** 
 ```{r}
-res1<-lm(standar_rate_10k ~ NOX_reduction_march2020 , data=model_risk)
+res1<-lm(standard_rate_10k ~ NOX_reduction_march2020 , data=model_risk)
 summary(res1)
 
 print("**Relative Ecologic Risk (RRE)")
@@ -403,43 +403,43 @@ print("**Relative Ecologic Risk (RRE)")
 
 
 #using resamplen to compute CI95
-final.RRE<-RRE(X=model_risk$NOX_reduction_march2020,Y=model_risk$standar_rate_10k,
+final.RRE<-RRE(X=model_risk$NOX_reduction_march2020,Y=model_risk$standard_rate_10k,
                num.itera=1000,nsize=200)
 
 final.RRE
 ```
 
-Standar rate of COVID19 and pollution reduction (April 2020) and **Ecological Relative Risk Morguenson 1982 **:
+Standard rate of COVID19 and pollution reduction (April 2020) and **Ecological Relative Risk Morguenson 1982 **:
 ```{r}
-res1<-lm(standar_rate_10k ~ NOX_reduction_april2020 , data=model_risk)
+res1<-lm(standard_rate_10k ~ NOX_reduction_april2020 , data=model_risk)
 summary(res1)
 
 print("Relative Ecologic Risk")
 (res1$coefficients[1] + res1$coefficients[2])/res1$coefficients[1] 
 
 #using resamplen to compute CI95
-final.RRE<-RRE(X=model_risk$NOX_reduction_april2020,Y=model_risk$standar_rate_10k,
+final.RRE<-RRE(X=model_risk$NOX_reduction_april2020,Y=model_risk$standard_rate_10k,
                num.itera=1000,nsize=200)
 
 final.RRE
 ```
-Standar rate of COVID19 and pollution reduction (May 2020) and **Ecological Relative Risk Morguenson 1982 **:
+Standard rate of COVID19 and pollution reduction (May 2020) and **Ecological Relative Risk Morguenson 1982 **:
 ```{r}
-res1<-lm(standar_rate_10k ~ NOX_reduction_may2020 , data=model_risk)
+res1<-lm(standard_rate_10k ~ NOX_reduction_may2020 , data=model_risk)
 summary(res1)
 
 print("Relative Ecologic Risk")
 (res1$coefficients[1] + res1$coefficients[2])/res1$coefficients[1] 
 
 #using resamplen to compute CI95
-final.RRE<-RRE(X=model_risk$NOX_reduction_may2020,Y=model_risk$standar_rate_10k,
+final.RRE<-RRE(X=model_risk$NOX_reduction_may2020,Y=model_risk$standard_rate_10k,
                num.itera=100,nsize=200)
 final.RRE
 ```
 
 
 
-Standar rate of COVID19 vs Pollution reduction (%) using March, April and May:
+Standard rate of COVID19 vs Pollution reduction (%) using March, April and May:
 ```{r}
 res1<-lm(positive_cases ~ NOX_reduction_march2020 + NOX_reduction_april2020 + NOX_reduction_may2020 , data=model_risk)
 summary(res1)
@@ -447,76 +447,76 @@ summary(res1)
 ```
 
 ## ###################################################################################
-## UNIVARIATE MODELS OF COVID-19 RISK ---Y=standar_rate_10k: --------------
+## UNIVARIATE MODELS OF COVID-19 RISK ---Y=standard_rate_10k: --------------
 ## ###################################################################################
 The level of aggregation in this case is: municipality/portion present in the system of the "Generalitat de Catalunya"
 Below are multiple regression models with various regressors (density, population):
-# COVID-19 risk modeling (Y= standar_rate_10k, X=  density)
+# COVID-19 risk modeling (Y= standard_rate_10k, X=  density)
 
-Standar Rate of COVID-19 (standar_rate_10k):
+Standard rate of COVID-19 (standard_rate_10k):
 ```{r}
-res1<-lm(standar_rate_10k ~ density , data=model_risk)
+res1<-lm(standard_rate_10k ~ density , data=model_risk)
 summary(res1)
 print("Relative Ecologic Risk---------------------------------:")
 (res1$coefficients[1] + res1$coefficients[2])/res1$coefficients[1] 
 ```
 
-# COVID-19 risk modeling  (Y= standar_rate_10k, X=  income_euros)
+# COVID-19 risk modeling  (Y= standard_rate_10k, X=  income_euros)
 Familiar Income (RFDB (milers d'euros)) 	
 ```{r}
-res1<-lm(standar_rate_10k ~ income_euros , data=model_risk)
+res1<-lm(standard_rate_10k ~ income_euros , data=model_risk)
 summary(res1)
 print("Relative Ecologic Risk---------------------------------:")
 (res1$coefficients[1] + res1$coefficients[2])/res1$coefficients[1] 
 ```
 
-# COVID-19 risk modeling (Y= standar_rate_10k, X=  income_euros_inhab)
+# COVID-19 risk modeling (Y= standard_rate_10k, X=  income_euros_inhab)
 Familiar Income per inhabitant (RFDB per habitant (milers d'euros))	
 ```{r}
-res1<-lm(standar_rate_10k ~ income_euros_inhab , data=model_risk)
+res1<-lm(standard_rate_10k ~ income_euros_inhab , data=model_risk)
 print(res1)
 summary(res1)
 
 print("Relative Ecologic Risk---------------------------------:")
 (res1$coefficients[1] + res1$coefficients[2])/res1$coefficients[1] 
 
-final.RRE<-RRE(X=model_risk$income_euros_inhab,Y=model_risk$standar_rate_10k,
+final.RRE<-RRE(X=model_risk$income_euros_inhab,Y=model_risk$standard_rate_10k,
                num.itera=1000,nsize=200)
 final.RRE
 ```
 
-# COVID-19 risk modeling (Y= standar_rate_10k, X=  income_euros_inhab)
+# COVID-19 risk modeling (Y= standard_rate_10k, X=  income_euros_inhab)
 Familiar Income per Inhabitante as Index (RFDB per habitant (índex Catalunya=100))
 ```{r}
-res1<-lm(standar_rate_10k ~ income_index_100 , data=model_risk)
+res1<-lm(standard_rate_10k ~ income_index_100 , data=model_risk)
 summary(res1)
 print("Relative Ecologic Risk---------------------------------:")
 (res1$coefficients[1] + res1$coefficients[2])/res1$coefficients[1] 
 ```
 
-# COVID-19 risk modeling  (Y= standar_rate_10k, X=  pollution reduction in April 2020)
+# COVID-19 risk modeling  (Y= standard_rate_10k, X=  pollution reduction in April 2020)
 X= Pollution reduction in march (AVERAGE PERCENTAGE OF REDUCTION IN AUTOMATIC SEASONS IN APRIL 2020 COMPARED TO APRIL 2017-2019)
 ```{r}
-res1<-lm(standar_rate_10k ~ NOX_reduction_april2020 , data=model_risk)
+res1<-lm(standard_rate_10k ~ NOX_reduction_april2020 , data=model_risk)
 summary(res1)
 print("Relative Ecologic Risk---------------------------------:")
 (res1$coefficients[1] + res1$coefficients[2])/res1$coefficients[1] 
 ```
 
-# COVID-19 risk modeling  (Y= standar_rate_10k, X=  pollution reduction in May 2020)
+# COVID-19 risk modeling  (Y= standard_rate_10k, X=  pollution reduction in May 2020)
 X= Pollution reduction in March (AVERAGE PERCENTAGE OF REDUCTION IN AUTOMATIC SEASONS  IN APRIL 2020 COMPARED TO MAY 2017-2019)
 ```{r}
-res1<-lm(standar_rate_10k ~ NOX_reduction_may2020 , data=model_risk)
+res1<-lm(standard_rate_10k ~ NOX_reduction_may2020 , data=model_risk)
 summary(res1)
 print("Relative Ecologic Risk---------------------------------:")
 (res1$coefficients[1] + res1$coefficients[2])/res1$coefficients[1] 
 ```
 
 ## ###################################################################################
-## MULTIVARIATE MODELS OF COVID-19 RISK ---Y=standar_rate_10k: -----------------------
+## MULTIVARIATE MODELS OF COVID-19 RISK ---Y=standard_rate_10k: -----------------------
 ## ###################################################################################
 
-# COVID-19 risk modeling with interaction (Y= standar_rate_10k, X= pollution reduction(%) in March, April, May, income_euros_inhab, density)
+# COVID-19 risk modeling with interaction (Y= standard_rate_10k, X= pollution reduction(%) in March, April, May, income_euros_inhab, density)
 Linear regression with no interaction for March 2020
 ```{r}
 res1<-lm(raw_rate_10k ~ NOX_reduction_march2020 + density  + income_euros_inhab, data=model_risk)
