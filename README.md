@@ -29,7 +29,7 @@ The aggregated data consists of 233 health areas in the rows (sanitary area) com
 ●	positive_cases: Total positive cases.<br>
 ●	suspected_cases: Total suspected cases.<br>
 ●	raw_rate_10k: raw rate per 10,000 inhabitants.<br>
-●	standar_rate_10k: Standardized crude rate per 10,000 inhabitants.<br>
+●	standard_rate_10k: Standardized crude rate per 10,000 inhabitants.<br>
 ●	insured_people: Insured people in the area.<br>
 ●	surface_km2: Area occupied by the health area.<br>
 ●	density: Population density by km2.<br>
