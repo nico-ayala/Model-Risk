@@ -103,9 +103,9 @@ library(gplots)
 library(ggplot2)
 library(DescTools)
 
-model_risk$income_euros<- as.numeric(model_risk$`RFDB (milers d'euros)`)
-model_risk$income_euros_inhab<- as.numeric(model_risk$`RFDB per habitant (milers d'euros)`)
-model_risk$income_index_100<- as.numeric(model_risk$`RFDB per habitant (índex Catalunya=100)`)
+model_risk$income_euros<- as.numeric(model_risk$income_euros)
+model_risk$income_euros_inhab<- as.numeric(model_risk$income_euros_inhab)
+model_risk$income_index_100<- as.numeric(model_risk$income_index_100)
 
 
 #Descriptive analysis for family incomes in thousands of euros (income_euros).
