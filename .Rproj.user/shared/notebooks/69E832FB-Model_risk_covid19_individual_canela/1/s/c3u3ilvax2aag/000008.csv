@@ -1,1 +1,0 @@
-"0","plot(model_risk$raw_rate_10k ~ model_risk$density, data=model_risk, xlab=""Density inhabitants/km2"", ylab=""raw rate "")"

@@ -1,6 +1,6 @@
 ---
 title: "Ecological Risk Model"
-author: "Nicolas Ayala & Toni Monleon. BIOST3. UNIV BARCELONA"
+author: "Nicolas Ayala, Toni Monleon. BIOST3 U. of Barcelona ; Jaume Canela. Hospital Clinic of Barcelona"
 date: "04/04/2022"
 output: html_document
 ---
@@ -103,14 +103,15 @@ library(gplots)
 library(ggplot2)
 library(DescTools)
 
-model_risk$income_euros<- as.numeric(model_risk$income_euros)
-model_risk$income_euros_inhab<- as.numeric(model_risk$income_euros_inhab)
-model_risk$income_index_100<- as.numeric(model_risk$income_index_100)
+model_risk$income_euros<- as.numeric(model_risk$`RFDB (milers d'euros)`)
+model_risk$income_euros_inhab<- as.numeric(model_risk$`RFDB per habitant (milers d'euros)`)
+model_risk$income_index_100<- as.numeric(model_risk$`RFDB per habitant (índex Catalunya=100)`)
 
 
 #Descriptive analysis for family incomes in thousands of euros (income_euros).
 res.RMISC.Q <- summarySE(model_risk, measurevar="income_euros", groupvars=c("municipality"),na.rm = T)
 res.RMISC.Q #descriptive
+
 
 ```
 
@@ -519,43 +520,43 @@ print("Relative Ecologic Risk---------------------------------:")
 # COVID-19 risk modeling with interaction (Y= standard_rate_10k, X= pollution reduction(%) in March, April, May, income_euros_inhab, density)
 Linear regression with no interaction for March 2020
 ```{r}
-res1<-lm(raw_rate_10k ~ NOX_reduction_march2020 + density  + income_euros_inhab, data=model_risk)
+res1<-lm(standard_rate_10k ~ NOX_reduction_march2020 + density  + income_euros_inhab, data=model_risk)
 summary(res1)
 ```
 
 Linear regression with  interaction for March 2020 
 ```{r}
-res1<-lm(raw_rate_10k ~ NOX_reduction_march2020 + density + NOX_reduction_march2020* density , data=model_risk)
+res1<-lm(standard_rate_10k ~ NOX_reduction_march2020 + density + NOX_reduction_march2020* density , data=model_risk)
 summary(res1)
 ```
 
 Linear regression with no interaction for April 2020 
 ```{r}
-res1<-lm(raw_rate_10k ~ NOX_reduction_april2020 + density  , data=model_risk)
+res1<-lm(standard_rate_10k ~ NOX_reduction_april2020 + density  , data=model_risk)
 summary(res1)
 ```
 
 Linear regression with interaction for April 2020 
 ```{r}
-res1<-lm(raw_rate_10k ~ NOX_reduction_april2020 + density + NOX_reduction_april2020* density , data=model_risk)
+res1<-lm(standard_rate_10k ~ NOX_reduction_april2020 + density + NOX_reduction_april2020* density , data=model_risk)
 summary(res1)
 ```
 
 Linear regression with no interaction for May 2020 
 ```{r}
-res1<-lm(raw_rate_10k ~ NOX_reduction_may2020 + density  , data=model_risk)
+res1<-lm(standard_rate_10k ~ NOX_reduction_may2020 + density  , data=model_risk)
 summary(res1)
 ```
 
 Linear regression with interaction for May 2020 
 ```{r}
-res1<-lm(raw_rate_10k ~ NOX_reduction_may2020 + density + NOX_reduction_may2020* density , data=model_risk)
+res1<-lm(standard_rate_10k ~ NOX_reduction_may2020 + density + NOX_reduction_may2020* density , data=model_risk)
 summary(res1)
 ```
 
 Linear regression with interaction for May 2020 and income 
 ```{r}
-res1<-lm(raw_rate_10k ~ NOX_reduction_may2020 + density + income_euros_inhab +
+res1<-lm(standard_rate_10k ~ NOX_reduction_may2020 + density + income_euros_inhab +
             NOX_reduction_may2020*income_euros_inhab
             , data=model_risk)
 summary(res1)

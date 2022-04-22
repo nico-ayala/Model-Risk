@@ -1,4 +1,0 @@
-"0","#DESCRIPTIVA DE RFDB (indice Catalunya)"
-"0","res.RMISC.Q <- summarySE(model_risk, measurevar=""income_index_100"", groupvars=c(""municipality""),na.rm = T)"
-"2","NaNs produced"
-"0","res.RMISC.Q #descriptiva"
